@@ -15,6 +15,7 @@ dependencies:
   cupertino_icons: ^1.0.8
   tflite_v2: ^1.0.0
   camera: ^0.11.0+2
+  speech_to_text: ^7.0.0
   flutter_bloc: ^8.1.6
   bloc: ^8.1.4
   url_launcher: ^6.0.20
@@ -30,3 +31,4 @@ flutter:
   uses-material-design: true
   assets:
     - assets/
+    - assets/college_logo.png

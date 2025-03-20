@@ -18,11 +18,8 @@ class BoundingBoxes extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double confidenceThreshold = 0.5;
     return Stack(
-      children: recognitions
-          .where((rec) => rec["confidenceInClass"] >= confidenceThreshold)
-          .map((rec) {
+      children: recognitions.map((rec) {
         var x = rec["rect"]["x"] * screenW;
         var y = rec["rect"]["y"] * screenH;
         double w = rec["rect"]["w"] * screenW;

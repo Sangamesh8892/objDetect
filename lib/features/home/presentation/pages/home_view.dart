@@ -13,121 +13,82 @@ class HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: AppBar(
-        title: const Text(
-          "Object Finder(Loda)",
-          textAlign: TextAlign.center,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 28,
-            fontWeight: FontWeight.bold,
-            shadows: [
-              Shadow(
-                blurRadius: 10.0,
-                color: Colors.black45,
-                offset: Offset(2.0, 2.0),
-              ),
-            ],
-          ),
-        ),
-        centerTitle: true,
-        backgroundColor: Colors.deepPurple,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            const Text(
-              "Fuck Graddle!, Fucking nightmare",
-              style: TextStyle(
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-                color: Colors.deepPurple,
-                shadows: [
-                  Shadow(
-                    blurRadius: 5.0,
-                    color: Colors.black26,
-                    offset: Offset(1.0, 1.0),
-                  ),
-                ],
-              ),
-              textAlign: TextAlign.center,
-            ),
-            const SizedBox(height: 20),
-            const Column(
-              children: [
-                Text(
-                  "Detect objects in real-time using your camera",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                  textAlign: TextAlign.center,
+    return WillPopScope(
+      onWillPop: () async {
+        Navigator.pushReplacementNamed(context, '/');
+        return false;
+      },
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: AppBar(
+          title: const Text(
+            "React Time Object Detection",
+            textAlign: TextAlign.center,
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 23,
+              fontWeight: FontWeight.bold,
+              shadows: [
+                Shadow(
+                  blurRadius: 10.0,
+                  color: Colors.black45,
+                  offset: Offset(2.0, 2.0),
                 ),
-                SizedBox(height: 10),
-                Text(
-                  "Only for soda buddi peoples",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 10),
-                Text(
-                  "By Samu, Sumu, Dumu, Shashu",
-                  style: TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black,
-                  ),
-                  textAlign: TextAlign.center,
-                ),
-                SizedBox(height: 10),
               ],
             ),
-            const SizedBox(height: 10),
-            CardItem(
-              context: context,
-              title: "Object Detection",
-              icon: Icons.camera_alt_outlined,
-              color: Colors.blueAccent,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) =>
-                        RealTimeObjectDetection(cameras: cameras),
-                  ),
-                );
-              },
-            ),
-            const SizedBox(height: 20),
-            // Commenting out the Speech to Text button for now
-            /*
-            CardItem(
-              context: context,
-              title: "Speech to Text",
-              icon: Icons.mic_outlined,
-              color: Colors.orange,
-              onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const SpeechToTextPage(),
-                  ),
-                );
-              },
-            ),
-            */
-            const SizedBox(height: 20),
-            // Removed the "Visit our website" link
-          ],
+          ),
+          centerTitle: true,
+          backgroundColor: Colors.deepPurple,
+        ),
+        body: Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                "Welcome to the Object Finder App",
+                style: TextStyle(
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.deepPurple,
+                  shadows: [
+                    Shadow(
+                      blurRadius: 5.0,
+                      color: Colors.black26,
+                      offset: Offset(1.0, 1.0),
+                    ),
+                  ],
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20),
+              const Text(
+                "This app allows you to detect objects in real-time using your camera. Select a feature to get started.",
+                style: TextStyle(
+                  fontSize: 18,
+                  color: Colors.black,
+                ),
+                textAlign: TextAlign.center,
+              ),
+              const SizedBox(height: 20),
+              CardItem(
+                context: context,
+                title: "Object Detection",
+                icon: Icons.camera_alt_outlined,
+                color: Colors.blueAccent,
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) =>
+                          RealTimeObjectDetection(cameras: cameras),
+                    ),
+                  );
+                },
+              ),
+              const SizedBox(height: 20),
+            ],
+          ),
         ),
       ),
     );
