@@ -89,7 +89,7 @@ class RealTimeObjectDetectionState extends State<RealTimeObjectDetection> {
 
     var recognitions = await Tflite.detectObjectOnFrame(
       bytesList: image.planes.map((plane) => plane.bytes).toList(),
-      model: 'SSDMobileNet',
+      model: 'YOLO',
       imageHeight: image.height,
       imageWidth: image.width,
       imageMean: 127.5,
