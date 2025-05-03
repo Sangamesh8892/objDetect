@@ -38,7 +38,7 @@ class BoundingBoxes extends StatelessWidget {
               ),
             ),
             child: Text(
-              "${rec["detectedClass"]} ${(rec["confidenceInClass"] * 100).toStringAsFixed(0)}% Width:${(w).ceil()} Heght: ${h.ceil()}",
+              "${rec["detectedClass"]} ${(rec["confidenceInClass"] * 100).toStringAsFixed(0)}%",
               style: TextStyle(
                 color: Colors.red,
                 fontSize: 15,

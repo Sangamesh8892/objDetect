@@ -95,7 +95,7 @@ class RealTimeObjectDetectionState extends State<RealTimeObjectDetection> {
       imageMean: 127.5,
       imageStd: 127.5,
       numResultsPerClass: 1,
-      threshold: 0.4,
+      threshold: 0.65,
     );
 
     setState(() {
