@@ -19,6 +19,7 @@ dependencies:
   flutter_bloc: ^8.1.6
   bloc: ^8.1.4
   url_launcher: ^6.0.20
+  flutter_tts: ^3.8.5
 
 dev_dependencies:
   flutter_test:
